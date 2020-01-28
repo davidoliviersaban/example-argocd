@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: example-app
+    namespace: argocd
+spec:
+    project: default
+    source:
+        repoURL: https://
+        targetRevision: HEAD
+        path: argo-cd/example-app/helm # where I store my kubernetes yaml files
+        directory:
+            recurse: true # tells Argo that should parse the above folder and look for all containing files
+    destination:
+        server: https://kubernetes.default.svc # Local Kub Cluster where Argo is deployed
+        namespace: example-app
+    syncPolicy:
+        automated:
+            prune: false
+            selfHeal: false
