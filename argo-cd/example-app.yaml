@@ -13,7 +13,7 @@ spec:
             recurse: true # tells Argo that should parse the above folder and look for all containing files
     destination:
         server: https://kubernetes.default.svc # Local Kub Cluster where Argo is deployed
-        namespace: example-app
+        namespace: argocd
     syncPolicy:
         automated:
             prune: false
