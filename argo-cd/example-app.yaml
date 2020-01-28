@@ -6,9 +6,9 @@ metadata:
 spec:
     project: default
     source:
-        repoURL: https://
+        repoURL: https://github.com/davidoliviersaban/example-argocd.git
         targetRevision: HEAD
-        path: argo-cd/example-app/helm # where I store my kubernetes yaml files
+        path: example-app/helm # where I store my kubernetes yaml files
         directory:
             recurse: true # tells Argo that should parse the above folder and look for all containing files
     destination:
